@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_9_app/shared/themes/app_colors.dart';
 import 'package:flutter_application_9_app/shared/themes/app_images.dart';
 import 'package:flutter_application_9_app/shared/themes/app_text_styles.dart';
+import 'package:flutter_application_9_app/shared/widgets/social_login/social_login_button.dart';
 
 class LoginPag extends StatefulWidget {
   const LoginPag({Key? key}) : super(key: key);
@@ -33,10 +34,10 @@ class _LoginPagState extends State<LoginPag> {
                 child: Image.asset(
                   AppImages.person,
                   width: 208,
-                  height: 373,
+                  height: 300,
                 )),
             Positioned(
-              bottom: 150,
+              bottom: size.height * 0.08,
               left: 0,
               right: 0,
               child: Column(
@@ -46,9 +47,26 @@ class _LoginPagState extends State<LoginPag> {
                     CrossAxisAlignment.center, //alinhamento horizontal
                 children: [
                   Image.asset(AppImages.logomini),
-                  Text(
-                    "Organize seus boletos em um só lugar",
-                    style: TextStyles.titleRegular,
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(top: 30, left: 70, right: 70),
+                    child: Text(
+                      "Organize seus boletos em um só lugar",
+                      textAlign: TextAlign.center,
+                      style: TextStyles.titleHome,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 40,
+                      left: 40,
+                      right: 40,
+                    ),
+                    child: SocialLoginButton(
+                      onTap: () {
+                        print("Clicou");
+                      },
+                    ),
                   )
                 ],
               ),
